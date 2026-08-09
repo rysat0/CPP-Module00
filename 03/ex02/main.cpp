@@ -14,8 +14,6 @@ int main(void)
 	scav.guardGate();
 	frag.highFivesGuys();
 
-	FragTrap scoped("scoped");
-
 	frag.takeDamage(30);
 	frag.beRepaired(10);
 

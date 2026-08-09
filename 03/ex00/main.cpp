@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	std::cout << "--- constructor / attack ---" << std::endl;
+	std::cout << "--- 1. constructor / attack ---" << std::endl;
 	ClapTrap test1("alex");
 	ClapTrap test2("bob");
 

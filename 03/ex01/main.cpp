@@ -9,11 +9,6 @@ int main(void)
 	clap.attack("a target");
 	scav.attack("a target");
 
-
-	ScavTrap scoped("scoped");
-	scoped.guardGate();
-	std::cout << "スコープを抜けました" << std::endl;
-
 	scav.takeDamage(30);
 	scav.beRepaired(10);
 
