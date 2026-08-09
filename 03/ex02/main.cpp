@@ -4,23 +4,34 @@
 
 int main(void)
 {
+	ClapTrap clap("CL4P-TP");
+	ScavTrap scav("SC4V-TP");
+	FragTrap frag("FR4G-TP");
+	clap.attack("a target");
+	scav.attack("a target");
+	frag.attack("a target");
 
-    ClapTrap crap1("alex");
+	scav.guardGate();
+	frag.highFivesGuys();
 
-    FragTrap frag1;
-    FragTrap frag2("alexa");
-    FragTrap frag3(frag2);
+	FragTrap scoped("scoped");
 
-    frag1 = frag3;
+	frag.takeDamage(30);
+	frag.beRepaired(10);
 
-    frag2.attack("target");
-	frag2.takeDamage(30);
-	frag2.beRepaired(10);
-	frag2.highFivesGuys();
+	FragTrap copied(frag);
+	FragTrap assigned;
+	assigned = copied;
+	assigned.attack("a target");
 
-	frag2.takeDamage(200);
-	frag2.attack("target after death");
-	frag2.beRepaired(10);
 
-    return 0;
+	frag.takeDamage(200);
+	frag.attack("a target");
+	frag.beRepaired(10);
+	frag.highFivesGuys();
+
+	FragTrap healer("healer");
+	healer.beRepaired(4294967295u);
+
+	return 0;
 }

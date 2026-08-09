@@ -4,22 +4,39 @@
 int main(void)
 {
 
-    ClapTrap crap1("alex");
+	ClapTrap clap("CL4P-TP");
+	ScavTrap scav("SC4V-TP");
+	clap.attack("a target");
+	scav.attack("a target");
 
-    ScavTrap scav1;
-    ScavTrap scav2("alexa");
-    ScavTrap scav3(scav2);
 
-    scav1 = scav3;
+	ScavTrap scoped("scoped");
+	scoped.guardGate();
+	std::cout << "スコープを抜けました" << std::endl;
 
-    scav2.attack("target");
-	scav2.takeDamage(30);
-	scav2.beRepaired(10);
-	scav2.guardGate();
+	scav.takeDamage(30);
+	scav.beRepaired(10);
 
-	scav2.takeDamage(200);
-	scav2.attack("target after death");
-	scav2.beRepaired(10);
+	ScavTrap copied(scav);
+	ScavTrap assigned;
+	assigned = copied;
+	assigned.attack("a target");
 
-    return 0;
+	scav.takeDamage(200);
+	scav.attack("a target");
+	scav.beRepaired(10);
+	scav.guardGate();
+
+	ScavTrap healer("healer");
+	healer.beRepaired(4294967295u);
+
+	ScavTrap tired("tired");
+	int i = 0;
+	while(i < 51)
+	{
+		tired.attack("a target");
+		i++;
+	}
+
+	return 0;
 }

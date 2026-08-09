@@ -3,9 +3,6 @@
 
 #include <iostream>
 #include <string>
-#include <fstream>
-#include <sstream>
-#include <cmath>
 
 class ClapTrap
 {
@@ -17,15 +14,14 @@ class ClapTrap
 
 	public:
 		ClapTrap();
-		ClapTrap(std::string name);
-		virtual ~ClapTrap();
+		ClapTrap(const std::string& name);
 		ClapTrap(const ClapTrap& other);
 		ClapTrap& operator = (const ClapTrap& other);
+		~ClapTrap();
 
-		void attack(const std::string &target);//参照
-		void takeDamage(unsigned int amount);//no minus
-		void beRepaired(unsigned int amount);//no minus
-
+		void attack(const std::string& target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
 };
 
 #endif

@@ -7,6 +7,8 @@ RM = rm -f
 
 SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
+HEADERS = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
+
 OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)
@@ -14,7 +16,7 @@ all : $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
-%.o : %.cpp
+%.o : %.cpp $(HEADERS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean :
