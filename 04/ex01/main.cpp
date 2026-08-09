@@ -51,10 +51,14 @@ int main()
 
 	Dog dog;
 	Dog dogCopy(dog);
+	if (dog.getBrain() == dogCopy.getBrain())
+		return (1);
 
 	Cat cat;
 	Cat catCopy;
 	catCopy = cat;
+	if (cat.getBrain() == catCopy.getBrain())
+		return (1);
 
 	std::cout << dogCopy.getType() << std::endl;
 	std::cout << catCopy.getType() << std::endl;

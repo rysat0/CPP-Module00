@@ -20,6 +20,7 @@ class Dog : public Animal
 
 		void makeSound() const;
 		std::string getType() const;
+		const Brain* getBrain() const;
 };
 
 #endif

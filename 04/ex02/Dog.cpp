@@ -46,3 +46,8 @@ std::string Dog::getType() const
 {
 	return(this->type);
 }
+
+const Brain* Dog::getBrain() const
+{
+	return (this->brain);
+}

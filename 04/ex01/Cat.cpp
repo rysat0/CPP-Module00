@@ -46,3 +46,8 @@ std::string Cat::getType() const
 {
 	return(this->type);
 }
+
+const Brain* Cat::getBrain() const
+{
+	return (this->brain);
+}
